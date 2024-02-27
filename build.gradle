@@ -29,22 +29,9 @@ jacocoTestCoverageVerification {
                 minimum = 0.8
             }
         }
-
-         rule {
-            enabled = false
-            element = 'CLASS'
-            includes = ['org.gradle.*']
-
-            limit {
-                counter = 'LINE'
-                value = 'TOTALCOUNT'
-                maximum = 0.3
-            }
-        }
-        
     }
 }
-
+test.finalizedBy('jacocoTestCoverageVerification') 
 
 repositories {
     mavenCentral()
