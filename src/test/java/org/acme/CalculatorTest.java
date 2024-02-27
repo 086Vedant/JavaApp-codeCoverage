@@ -22,39 +22,39 @@ public class CalculatorTest {
              .body(equalTo("8"));
     }
 
-    // @Test
-    // public void testSubtractEndpoint() {
-    //     given()
-    //       .queryParam("a", 10)
-    //       .queryParam("b", 4)
-    //       .when().get("/calculator/subtract")
-    //       .then()
-    //          .statusCode(200)
-    //          .contentType(ContentType.TEXT)
-    //          .body(equalTo("6"));
-    // }
+    @Test
+    public void testSubtractEndpoint() {
+        given()
+          .queryParam("a", 10)
+          .queryParam("b", 4)
+          .when().get("/calculator/subtract")
+          .then()
+             .statusCode(200)
+             .contentType(ContentType.TEXT)
+             .body(equalTo("6"));
+    }
 
-    // @Test
-    // public void testMultiplyEndpoint() {
-    //     given()
-    //       .queryParam("a", 7)
-    //       .queryParam("b", 5)
-    //       .when().get("/calculator/multiply")
-    //       .then()
-    //          .statusCode(200)
-    //          .contentType(ContentType.TEXT)
-    //          .body(equalTo("35"));
-    // }
+    @Test
+    public void testMultiplyEndpoint() {
+        given()
+          .queryParam("a", 7)
+          .queryParam("b", 5)
+          .when().get("/calculator/multiply")
+          .then()
+             .statusCode(200)
+             .contentType(ContentType.TEXT)
+             .body(equalTo("35"));
+    }
 
-    // @Test
-    // public void testDivideEndpoint() {
-    //     given()
-    //       .queryParam("a", 20)
-    //       .queryParam("b", 4)
-    //       .when().get("/calculator/divide")
-    //       .then()
-    //          .statusCode(200)
-    //          .contentType(ContentType.TEXT)
-    //          .body(equalTo("5"));
-    // }
+    @Test
+    public void testDivideEndpoint() {
+        given()
+          .queryParam("a", 20)
+          .queryParam("b", 4)
+          .when().get("/calculator/divide")
+          .then()
+             .statusCode(200)
+             .contentType(ContentType.TEXT)
+             .body(equalTo("5"));
+    }
 }
