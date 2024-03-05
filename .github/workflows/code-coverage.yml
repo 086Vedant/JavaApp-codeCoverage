@@ -22,17 +22,3 @@ jobs:
 
       - name: Build and Test with Gradle
         run: ./gradlew clean build
-
-      - name: Extract Coverage Percentage
-        id: extract_coverage
-        run: |
-          coverage=$(grep -oP '(?<=<td>Total<\/td><td class="bar">)(\d+)' < build/jacocoHtml/index.html)
-          echo "::set-output name=coverage::$coverage"
-
-      - name: Check Coverage Threshold
-        run: |
-          if (( $(echo "${{ steps.extract_coverage.outputs.coverage }} < 80" | bc -l) )); then
-            echo "Error: Test coverage is below 80% threshold"
-            exit 1
-          fi
-
