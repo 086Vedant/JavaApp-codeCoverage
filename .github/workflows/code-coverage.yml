@@ -22,3 +22,10 @@ jobs:
 
       - name: Build and Test with Gradle
         run: ./gradlew clean build
+
+      - name: Archive Code Coverage Report
+        uses: actions/upload-artifact@v4.3.1
+        with:
+          name: code-coverage-report
+          path: ${{ github.workspace }}/build/jacocoHtml/
+
